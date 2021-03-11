@@ -6,4 +6,16 @@ All of the following tests were performed on a Dell Poweredge Server with 2 sock
 ## FIO Tests for Secondary Memory SAS Drives
 ### Bandwidth vs. Latency for Different R/W Configurations
 
+![](lat_v_bw/r4k.png)
+![](lat_v_bw/r32k.png)
+![](lat_v_bw/r70_4k.png)
+![](lat_v_bw/r70_32k.png)
+![](lat_v_bw/r50_4k.png)
+![](lat_v_bw/r50_32k.png)
+![](lat_v_bw/r30_4k.png)
 ![](lat_v_bw/r30_32k.png)
+![](lat_v_bw/w4k.png)
+![](lat_v_bw/w32k.png)
+
+### R/W Configurations vs. Bandwidth
+![](etc/blocksize_v_bandwidth.png)
