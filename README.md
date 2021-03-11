@@ -17,6 +17,8 @@ All of the following tests were performed on a Dell Poweredge Server with 2 sock
 ![](lat_v_bw/w4k.png)
 ![](lat_v_bw/w32k.png)
 
+As can be seen in all of the above plots, bandwidth drops off significantly with increases in lateceny.  All of these tests were performed using an IO depth of 1 so that is why we see such a dramtic inverse relationship between latency and bandwidth.
+
 ### R/W Configurations vs. Bandwidth
 ![](etc/blocksize_v_bandwidth.png)
 
