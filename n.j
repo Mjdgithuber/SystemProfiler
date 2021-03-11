@@ -1,8 +1,9 @@
 [global]
-;direct=1
+direct=1
 ;runtime=15
 ioengine=libaio
-size=256M
+;size=256M
+size=128M
 numjobs=1
 iodepth=1
 per_job_logs=0
