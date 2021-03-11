@@ -1,7 +1,7 @@
 # System Profiler
 
 ## System Under Test
-All of the following tests were performed on a Dell Poweredge Server with 2 sockets and 8 memory channels.  Between the two Xeons there are a total of 32 logical cores available for the tests.  As far secondary memory goes, there are a total of 8 SAS 7.2K drives in a RAID 10 configuration.  It is also important to note that the RAID controller is  enterprise-class with a large on-board cache vastly increasing the performance.
+All of the following tests were performed on a Dell Poweredge Server with 2 sockets and 8 memory channels.  Between the two Xeons there are a total of 32 logical cores available for the tests.  As far secondary memory goes, there are a total of 8 SAS 7.2K drives in a RAID 10 configuration.  It is also important to note that the RAID controller is  enterprise-class with a large on-board cache which in theory should vastly increase the performance of the array.
 
 ## FIO Tests for Secondary Memory SAS Drives
 ### Bandwidth vs. Latency for Different R/W Configurations
@@ -17,7 +17,7 @@ All of the following tests were performed on a Dell Poweredge Server with 2 sock
 ![](lat_v_bw/w4k.png)
 ![](lat_v_bw/w32k.png)
 
-As can be seen in all of the above plots, bandwidth drops off significantly with increases in lateceny.  All of these tests were performed using an IO depth of 1 so that is why we see such a dramtic inverse relationship between latency and bandwidth.
+As can be seen in all of the above plots, bandwidth drops off significantly with increases in lateceny.  All of these tests were performed using an IO depth of 1 so that is why we see such a dramtic inverse relationship between latency and bandwidth.  Unfortunately Centos 7, the OS I was using to test on, has issues with the msr module and is unable to inject delays during testing, so I was unable to test latency v. bandwidth for a stride length of 256 bytes.  
 
 ### R/W Configurations vs. Bandwidth
 ![](etc/blocksize_v_bandwidth.png)
