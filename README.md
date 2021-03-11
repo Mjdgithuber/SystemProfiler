@@ -19,3 +19,14 @@ All of the following tests were performed on a Dell Poweredge Server with 2 sock
 
 ### R/W Configurations vs. Bandwidth
 ![](etc/blocksize_v_bandwidth.png)
+
+## Intel Tests for Main Memory
+### Memory Bandwidth for Different R/W Configurations
+![](etc/intel_bandwidth_configs.png)
+
+As can be seen in the plot, there isn't a massive difference between different read vs. write configurations and overall bandwidth.  This is expected because main memory is random access and has fixed timing.  I was a little surprised to see that all reads were among the slowest tested.  Please also note that the bandwidth on a server is substantially larger than desktop/laptop systems due to having many more memory channels.  
+
+### Local vs. Remote Bandwidth
+![](etc/intel_local_v_remote.png)
+
+Each socket on a server will have a number of "local" channels, and will sometimes need to read/write to a "remote" channel that belongs to another socket.  NUMA standxs for non-uniform memory access and typically is going to be slower than accessing data local to the socket.  Remote accesses are speed up by having more logical cores, so I suspect that this is the reason why reading from a non-local channel had more bandwidth (but should have more latency).
