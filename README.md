@@ -20,6 +20,8 @@ All of the following tests were performed on a Dell Poweredge Server with 2 sock
 ### R/W Configurations vs. Bandwidth
 ![](etc/blocksize_v_bandwidth.png)
 
+As we would expect, on average read speeds are much higher than write speeds for a HDD.  I suspect that the cache on the RAID card makes the write results a little deceiving for the smaller writes given that writing to the cache will be much faster than writing to the disk itself.
+
 ## Intel Tests for Main Memory
 ### Memory Bandwidth for Different R/W Configurations
 ![](etc/intel_bandwidth_configs.png)
